@@ -6,6 +6,12 @@
 </head>
 
 <body>
+    <header style="color:#8b0000; text-align: center; font-size: 40px; padding: 20px;">Rock Paper Scisors</header>
+    <div style="text-align: center; padding: 100px;"><button type="button" onclick="game()"
+            style="font-size:18px;cursor: pointer">START!</button></div>
+    <p style="text-align: center; font-size: 15px; padding: 10px;"><span style="color: #8b0000">Instructions:</span>
+        Open console to see the results.</p>
+
     <script>
 
         let playerScore = 0;
@@ -70,40 +76,59 @@
                 }
             }
 
-            else return "Please enter a valid answer.";
+            else userLose();
+                 return "Please enter a valid answer. Otherwise, Computer wins the round by default.";
 
         }
 
         function userWin() {
-            playerScore++;
+            playerScore++;          
         }
 
         function userLose() {
             computerScore++;
         }
 
+        function reset() {
+            let playerScore = 0;
+
+            let computerScore = 0;
+        }
+
         function game() {
 
-            for (let n = 1; n < 6  ; n++) {
-                let playerSelection = prompt("Round: " + n + "  Enter Rock, Paper or Scissors").toUpperCase();
+            for (let n = 1; n < 6; n++) {
+
+                let playerSelection = prompt("Round: " + n + "  Enter Rock, Paper or Scissors");
+                if (playerSelection != null) {
+                    playerSelection = playerSelection.toUpperCase();
+                }
+                else if (playerSelection = null) {
+                    userLose();
+                }       
+
                 let computerSelection = computerPlay();
+
                 playRound(playerSelection, computerSelection);
+
                 console.log("Computer picked " + computerSelection.toLowerCase());
                 console.log("Round:" + n, playRound(playerSelection, computerSelection));
                 console.log("Your score: " + playerScore + " , " + "Computer's score: " + computerScore);
             }
 
             if (playerScore > computerScore) {
+                reset();
                 console.log("You win the game :)");
             }
             else if (playerScore < computerScore) {
+                reset();
                 console.log("You lose the game :(")
             }
-            else console.log("The game is a tie!");
+            else reset();
+            console.log("The game is a tie!");
 
         }
 
-        game();
 
     </script>
 
