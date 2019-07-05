@@ -80,9 +80,14 @@
                     return "You win! Scissors beat Paper."
                 }
             }
-
-            else userLose();
-            return "Please enter a valid answer. Otherwise, Computer wins the round by default.";
+            else if (playerSelection == "") {
+                userLose();
+                return "Please enter something. Otherwise, Computer wins the round by default";
+            }
+            else {
+                userLose();
+                return "Please enter a valid answer. Otherwise, Computer wins the round by default.";
+            }
 
         }
 
@@ -101,19 +106,22 @@
 
         function game() {
 
+            console.clear();
+
             for (let n = 1; n < 6; n++) {
 
                 let playerSelection = prompt("Round: " + n + "  Enter Rock, Paper or Scissors");
-                if (playerSelection != null) {
+                if (playerSelection !== null) {
                     playerSelection = playerSelection.toUpperCase();
                 }
-                else if (playerSelection = null) {
-                    userLose();
+                else if (playerSelection === null) {
+                    reset();
+                    return alert("Game closed!");   
                 }
 
                 let computerSelection = computerPlay();
 
-                console.log("You picked "+playerSelection.toLowerCase()+" and "+"Computer picked " + computerSelection.toLowerCase());
+                console.log("You picked " + playerSelection.toLowerCase() + " and " + "Computer picked " + computerSelection.toLowerCase());
                 console.log("Round:" + n, playRound(playerSelection, computerSelection));
                 console.log("Your score: " + playerScore + " , " + "Computer's score: " + computerScore);
             }
