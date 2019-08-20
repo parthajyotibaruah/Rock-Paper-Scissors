@@ -119,7 +119,7 @@ function win() {
     declaration.appendChild(p);
     declaration.style.backgroundColor = "green";
     declaration.style.pAlign = "center";
-    p.innerHTML = "Congrats! you won the game."
+    p.innerHTML = "Congrats! you won the game." 
 }
 
 

@@ -29,6 +29,7 @@
 
 p {
     font-size: 20px;
+    text-align: center;
 }
 
 button {
@@ -40,5 +41,6 @@ button {
 }
 
 #rules {
+    padding-top: 50px;
     color:#8b0000;
 }
