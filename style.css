@@ -1,0 +1,44 @@
+#container {
+    text-align: center;
+}
+
+#container header {
+    color:#8b0000;
+    text-align: center;
+    font-size: 60px; 
+    padding: 20px;
+    
+}
+
+#scoreboard {
+    font-size: 20px;
+    padding: 25px;
+}
+#logRound {
+    display: block;
+    padding-bottom: 7px;
+}
+
+#choices {
+    font-size: 15px;
+}
+
+#results {
+    font-size: 15px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    font-size: 20px;
+}
+
+#RESTART {
+    margin-top: 10px;
+}
+
+#rules {
+    color:#8b0000;
+}
